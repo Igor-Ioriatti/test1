@@ -20,7 +20,7 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
-
+  grunt.loadNpmTasks('grunt-git-deploy');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -441,7 +441,17 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.coffee',
         singleRun: true
       }
-    }
+    },
+    git_deploy: {
+    your_target: {
+      options: {
+        url: 'git@github.com:Igor-Ioriatti/test1.git',
+        options.branch:'gh-pages',
+        options.message:'autocommit'
+      },
+      src: 'Igor-Ioriatti/test1'
+    },
+  }
   });
 
 
